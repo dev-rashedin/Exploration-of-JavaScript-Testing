@@ -57,4 +57,38 @@ describe('numbers', () => {
 })
 
 
+describe('strings', () => {
+  it('there is no I in team', () => {
+    expect('team').not.toMatch(/I/)
+  })
+})
+
+
+describe('arrays', () => {
+  const shoppingList = [
+    'diapers',
+    'kleenex',
+    'trash bags',
+    'paper towels',
+    'milk'
+  ]
+
+  expect(shoppingList).toContain('milk');
+
+})
+
+
+function compileAndroidCode() {
+  throw new Error('you are using the wrong JDK');
+}
+
+describe("exceptions", () => {
+  it("compiling android goes as expected", () => { 
+    expect(() => compileAndroidCode()).toThrow(
+      "you are using the wrong JDK"
+    );
+  })
+})
+
+
 
