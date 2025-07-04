@@ -25,6 +25,7 @@ describe('sum()', () => {
 // truthy or falsy
 describe('truthy or falsy', () => {
   it('null', () => {
+    // const n = 0;
     const n = null;
 
     // expect(n).toBeTruthy()
@@ -34,7 +35,26 @@ describe('truthy or falsy', () => {
     // expect(n).toBeUndefined()
     expect(n).not.toBeUndefined()
   })
+
+  it('adding floats', () => {
+    const value = 0.1 + 0.2
+    expect(value).toBeCloseTo(0.3)
+    expect(value).toBeCloseTo(0.299)
+    // expect(value).toBe(0.3)
+
   })
+})
+  
+
+describe('numbers', () => {
+  it('two plus two', () => {
+    const value = 2 + 2;
+    expect(value).toBeGreaterThan(3)
+    expect(value).toBeGreaterThanOrEqual(3)
+    expect(value).toBeLessThan(5)
+    expect(value).toBeLessThanOrEqual(5)
+  })
+})
 
 
 
