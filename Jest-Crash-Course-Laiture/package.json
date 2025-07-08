@@ -14,6 +14,7 @@
     "jest": "^30.0.3"
   },
   "dependencies": {
+    "axios": "^1.10.0",
     "express-error-toolkit": "^1.0.0",
     "http-status-toolkit": "^1.0.1"
   }
