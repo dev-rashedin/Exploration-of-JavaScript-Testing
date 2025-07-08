@@ -1,3 +1,4 @@
+const { BadRequestError } = require('express-error-toolkit');
 const sum = require('./sum');
 
 // test('adds 1 + 2 to equal 3', () => {
@@ -63,6 +64,12 @@ describe('strings', () => {
   })
 })
 
+describe('strings', () => {
+  it('there is no o in my name', () => {
+    const name = 'Rashedin Islam';
+    expect(name).not.toMatch(/o/);
+  })
+})
 
 describe('arrays', () => {
   const shoppingList = [
@@ -73,7 +80,9 @@ describe('arrays', () => {
     'milk'
   ]
 
-  expect(shoppingList).toContain('milk');
+ it('the shopping list has milk on it', () => {
+    expect(shoppingList).toContain('milk')
+  })
 
 })
 
@@ -87,6 +96,17 @@ describe("exceptions", () => {
     expect(() => compileAndroidCode()).toThrow(
       "you are using the wrong JDK"
     );
+  })
+})
+
+function randomFunc() {
+  throw new BadRequestError('Bad request')
+}
+
+
+describe("exceptions", () => {
+  it('Should throw BadRequestError', () => { 
+    expect(() => randomFunc()).toThrow(BadRequestError)
   })
 })
 
